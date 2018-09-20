@@ -1,0 +1,11 @@
+version: "3.6"
+
+services:
+  cdn:
+    build: .
+    volumes:
+      - ./logs:/logs
+      - ./config/cert:/etc/ssl/certs/nginx/georgecolgrove.com/
+      - ./files:/var/www/assets
+    ports:
+      - 443:443
